@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'body')
     prepopulated_fields = {'slug': ('title',)}
     raw_id_fields = ('author',)
-    date_hierarch = 'publish'
+    date_hierarchy = 'publish'
     ordering = ['status', 'publish']
 
 
