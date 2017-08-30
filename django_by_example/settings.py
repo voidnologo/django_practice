@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -121,11 +123,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-with open(os.path.join(os.path.expanduser('~'), '.email_config'), 'r') as f:
-    email_config = json.load(f)
+# with open(os.path.join(os.path.expanduser('~'), '.email_config'), 'r') as f:
+#     email_config = json.load(f)
 
-EMAIL_HOST = email_config.get('host')
-EMAIL_HOST_USER = email_config.get('user')
-EMAIL_HOST_PASSWORD = email_config.get('password')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# EMAIL_HOST = email_config.get('host')
+# EMAIL_HOST_USER = email_config.get('user')
+# EMAIL_HOST_PASSWORD = email_config.get('password')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
